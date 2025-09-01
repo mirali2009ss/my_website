@@ -2,21 +2,16 @@
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="favicon.ico/favicon.ico.jpg" type="image/x-icon">
     <title>هر ورق یه جهان تازه</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="deccription" content="سایت معرفس کتاب ها ومقالات با خلاصه و نقد">
-    <meta name="keywords" content="مقالات ,کتاب,نقد کتاب, مطالعه">
-
+    <meta name="description" content="سایت معرفی کتاب‌ها و مقالات با خلاصه و نقد">
+    <meta name="keywords" content="مقالات, کتاب, نقد کتاب, مطالعه">
 </head>
 <body>
 
     <!-- هدر -->
     <header>
-        <!-- لوگو -->
         <div class="logo">ورق</div>
-
-        <!-- منو / ناوبری -->
         <nav class="main-nav">
             <ul>
                 <li><a href="#">خانه</a></li>
@@ -26,8 +21,6 @@
                 <li><a href="#">تماس با ما</a></li>
             </ul>
         </nav>
-
-        <!-- دکمه CTA -->
         <div class="cta">
             <a href="#">مشاهده کتاب‌ها</a>
         </div>
@@ -40,66 +33,113 @@
         <a href="#" class="btn-hero">مشاهده کتاب‌ها</a>
     </section>
 
-<!-- کتاب‌های ویژه هفته -->
-<section class="featured-books">
-    <h2>📚 کتاب‌های ویژه هفته</h2>
-    <div class="book-cards">
-        <div class="book-card">
-            <img src="img/download.jpg" alt="کتاب ۱">
-            <h3>نام کتاب ۱</h3>
-            <p>توضیح کوتاه درباره کتاب ۱.</p>
-            <a href="#">مطالعه بیشتر</a>
+    <section class="featured-books">
+        <h2>📚 کتاب‌های ویژه هفته</h2>
+        
+        <!-- کل اسلایدر داخل این بخش قرار می‌گیره -->
+        <div class="slider-wrapper">
+            
+            <!-- دکمه فلش چپ -->
+            <button class="slider-btn prev">&#10094;</button> 
+            
+            <!-- ردیف کارت‌های کتاب -->
+            <div class="book-slider">
+                <div class="book-card">
+                    <img src="img/download.jpg" alt="کتاب ۱">
+                    <h3>نام کتاب ۱</h3>
+                    <p>توضیح کوتاه درباره کتاب ۱.</p>
+                    <a href="#">مطالعه بیشتر</a>
+                </div>
+                <div class="book-card">
+                    <img src="img/download.jpg" alt="کتاب ۱">
+                    <h3>نام کتاب ۱</h3>
+                    <p>توضیح کوتاه درباره کتاب ۱.</p>
+                    <a href="#">مطالعه بیشتر</a>
+                </div>
+                <div class="book-card">
+                    <img src="img/download.jpg" alt="کتاب ۱">
+                    <h3>نام کتاب ۱</h3>
+                    <p>توضیح کوتاه درباره کتاب ۱.</p>
+                    <a href="#">مطالعه بیشتر</a>
+                </div>
+                <div class="book-card">
+                    <img src="img/download.jpg" alt="کتاب ۲">
+                    <h3>نام کتاب ۲</h3>
+                    <p>توضیح کوتاه درباره کتاب ۲.</p>
+                    <a href="#">مطالعه بیشتر</a>
+                </div>
+                
+                <div class="book-card">
+                    <img src="img/download.jpg" alt="کتاب ۳">
+                    <h3>نام کتاب ۳</h3>
+                    <p>توضیح کوتاه درباره کتاب ۳.</p>
+                    <a href="#">مطالعه بیشتر</a>
+                </div>
+                
+                <div class="book-card">
+                    <img src="img/download.jpg" alt="کتاب ۴">
+                    <h3>نام کتاب ۴</h3>
+                    <p>توضیح کوتاه درباره کتاب ۴.</p>
+                    <a href="#">مطالعه بیشتر</a>
+                </div>
+            </div>
+            
+            <!-- دکمه فلش راست -->
+            <button class="slider-btn next">&#10095;</button> 
         </div>
-        <div class="book-card">
-            <img src="img/download.jpg" alt="کتاب ۲">
-            <h3>نام کتاب ۲</h3>
-            <p>توضیح کوتاه درباره کتاب ۲.</p>
-            <a href="#">مطالعه بیشتر</a>
+    </section>
+    <!-- آخرین مقالات -->
+    <section class="latest-articles">
+        <h2>📝 آخرین مقالات</h2>
+        <div class="article-cards">
+            <div class="article-card">
+                <img src="img/article1.jpg" alt="مقاله ۱">
+                <h3>عنوان مقاله ۱</h3>
+                <p>خلاصه‌ای کوتاه از مقاله.</p>
+                <a href="#">ادامه مطلب</a>
+            </div>
+            <div class="article-card">
+                <img src="img/article2.jpg" alt="مقاله ۲">
+                <h3>عنوان مقاله ۲</h3>
+                <p>خلاصه‌ای کوتاه از مقاله.</p>
+                <a href="#">ادامه مطلب</a>
+            </div>
+            <div class="article-card">
+                <img src="img/article3.jpg" alt="مقاله ۳">
+                <h3>عنوان مقاله ۳</h3>
+                <p>خلاصه‌ای کوتاه از مقاله.</p>
+                <a href="#">ادامه مطلب</a>
+            </div>
         </div>
-        <div class="book-card">
-            <img src="img/download.jpg" alt="کتاب ۳">
-            <h3>نام کتاب ۳</h3>
-            <p>توضیح کوتاه درباره کتاب ۳.</p>
-            <a href="#">مطالعه بیشتر</a>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- آخرین مقالات -->
-<section class="latest-articles">
-    <h2>📝 آخرین مقالات</h2>
-    <div class="article-cards">
-        <div class="article-card">
-            <img src="article1.jpg" alt="مقاله ۱">
-            <h3>عنوان مقاله ۱</h3>
-            <p>خلاصه‌ای کوتاه از مقاله.</p>
-            <a href="#">ادامه مطلب</a>
+    <!-- فوتر -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 ورق - همه حقوق محفوظ است.</p>
+            <div class="socials">
+                <a href="#">اینستاگرام</a> |
+                <a href="#">تلگرام</a> |
+                <a href="#">توییتر</a>
+            </div>
         </div>
-        <div class="article-card">
-            <img src="article2.jpg" alt="مقاله ۲">
-            <h3>عنوان مقاله ۲</h3>
-            <p>خلاصه‌ای کوتاه از مقاله.</p>
-            <a href="#">ادامه مطلب</a>
-        </div>
-        <div class="article-card">
-            <img src="article3.jpg" alt="مقاله ۳">
-            <h3>عنوان مقاله ۳</h3>
-            <p>خلاصه‌ای کوتاه از مقاله.</p>
-            <a href="#">ادامه مطلب</a>
-        </div>
-    </div>
-</section>
-
-<!-- فوتر -->
-<footer>
-    <div class="footer-content">
-        <p>© 2025 ورق - همه حقوق محفوظ است.</p>
-        <div class="socials">
-            <a href="#">اینستاگرام</a> |
-            <a href="#">تلگرام</a> |
-            <a href="#">توییتر</a>
-        </div>
-    </div>
-</footer>
+    </footer>
+    <script>
+        const slider = document.querySelector('.book-slider'); // پیدا کردن بخش کارت‌ها
+        const prevBtn = document.querySelector('.slider-btn.prev'); // دکمه چپ
+        const nextBtn = document.querySelector('.slider-btn.next'); // دکمه راست
+        
+        const scrollAmount = 900; // اندازه حرکت (عرض هر کارت + فاصله بینشون)
+        
+        nextBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' }); 
+            // وقتی روی دکمه راست کلیک بشه، کارت‌ها به سمت راست حرکت می‌کنن
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            // وقتی روی دکمه چپ کلیک بشه، کارت‌ها به سمت چپ حرکت می‌کنن
+        });
+        </script>
 </body>
 </html>
