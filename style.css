@@ -5,16 +5,28 @@ body {
     color: #264653;
     margin: 0;
     padding: 0;
+  
+
 }
 
 /* ===== 🟢 هدر ===== */
 header {
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
     background-color: #264653;
     color: #f1f0e8;
+position: fixed;
+top: 0;
+left: 0;
+width: 92.7%;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+z-index: 1000;
+
+   
+
 }
 
 header .logo {
@@ -257,3 +269,22 @@ footer .socials a {
 footer .socials a:hover {
     text-decoration: underline;
 }
+/* کل اسکرول بار */
+::-webkit-scrollbar {
+    height: 7px;           /* ضخامت افقی (بالای صفحه) */
+    width: 7px;            /* ضخامت عمودی */
+  }
+  
+  /* قسمت کشویی (thumb) */
+  ::-webkit-scrollbar-thumb {
+    background-color: #a8a8a8;  /* رنگ دلخواه */
+    border-radius: 1.5px;      /* گرد شدن گوشه‌ها */
+  }
+  
+  
+  
+  /* قسمت پشت اسکرول (track) */
+  ::-webkit-scrollbar-track {
+    background: #e9e9e9;    /* رنگ پشت نوار */
+    border-radius: 3px;
+  }
