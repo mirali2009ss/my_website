@@ -1,11 +1,11 @@
 /* 🎨 تنظیمات کلی سایت */
+
 body {
-    font-family: sans-serif;
     background-color: #fafafa;
     color: #264653;
     margin: 0;
     padding: 0;
-  
+    font-family: 'Shabnam', sans-serif;
 
 }
 
@@ -16,7 +16,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #264653;
+    backdrop-filter: blur(7px);
+    background-color: #264653d5;
     color: #f1f0e8;
 position: fixed;
 top: 0;
@@ -25,14 +26,56 @@ width: 92.7%;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 z-index: 1000;
 
-   
-
 }
-
-header .logo {
+.logo-final {
+    display: flex;          /* کنار هم قرار گرفتن کتاب و متن */
+    align-items: center;    /* مرکز چین شدن عمودی */
+    gap: 6px;               /* فاصله کم بین کتاب و متن */
+    cursor: pointer;
+  }
+  
+  .icon-book {
+    display: flex;
+    gap: 2px;
+    width: 28px;
+    height: 24px;
+  }
+  
+  .book-left, .book-right {
+    flex: 1;
+    border-radius: 2px;
+    background: linear-gradient(145deg, #f3c26b, #e3b23c);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .book-left { transform: rotate(-12deg); }
+  .book-right { transform: rotate(12deg); transform-origin: right; }
+  
+  /* متن لوگو */
+  .logo-text {
     font-size: 28px;
     font-weight: bold;
-}
+  
+    /* گرادینت پس‌زمینه */
+    background: linear-gradient(90deg, #f3c26b, #ffd85c, #e3b23c);
+  
+    /* برای WebKit (Chrome, Safari, Edge) */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    /* برای Firefox */
+    background-clip: text;
+    color: transparent;
+  
+    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  }
+  
+  /* Hover */
+  .logo-final:hover .book-left { transform: rotate(-5deg); }
+  .logo-final:hover .book-right { transform: rotate(5deg); }
+  .logo-final:hover .logo-text { transform: scale(1.05); }
+
 
 header nav ul {
     list-style: none;
@@ -46,6 +89,8 @@ header nav ul li a {
     color: #f1f0e8;
     text-decoration: none;
     font-weight: 500;
+    position: relative;
+    font-size: large;
 }
 
 header .cta a {
@@ -56,38 +101,133 @@ header .cta a {
     border-radius: 5px;
     font-weight: bold;
 }
-
-header nav ul li a:hover,
-header .cta a:hover {
-    opacity: 0.8;
+header .cta a:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+/* لینک‌های منو */
+header nav ul li a {
+    position: relative;       /* برای اینکه خط زیر لینک نسبت به لینک باشه */
+    padding-bottom: 4px;      /* فاصله متن تا خط */
+    color: #f1f0e8;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  /* خط زیر لینک */
+  header nav ul li a::after {
+    content: "";
+    position: absolute;
+    height: 2px;               /* ضخامت خط */
+    bottom: 0;                 /* درست زیر متن */
+    left: 0;
+    width: 100%;               /* طول کامل لینک */
+    background-color: #e3b23c; /* رنگ طلایی */
+    
+    /* شروع با خط صفر */
+    transform: scaleX(0);
+    transform-origin: left;     /* از سمت چپ شروع به کشیده شدن */
+    
+    /* انیمیشن نرم */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* وقتی موس روی لینک میره */
+  header nav ul li a:hover::after {
+    transform: scaleX(1.01);      /* خط کامل ظاهر میشه */
+  }
+header nav ul li a:hover {
+    opacity: 0.95;
 }
 
 /* ===== 🟢 بخش هیرو (بنر اصلی) ===== */
 .hero {
+    position: relative;
     text-align: center;
-    padding: 100px 20px;
-    background-color: #fafafa;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero p {
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #fafafa, #f1f0e8);
+    overflow: hidden;
+  }
+  
+  /* عنوان با animated gradient و shadow */
+  .hero h1 {
+    font-size: 50px;
+    font-weight: 800;
+    background: linear-gradient(270deg, #f3c26b, #e3b23c, #ffd85c);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+    animation-delay: 0.2s;
+    animation-name: fadeInUp, gradientShift;
+    animation-duration: 0.8s, 8s;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease, ease-in-out;
+  }
+  
+  /* زیرعنوان */
+  .hero p {
     font-size: 20px;
-    margin-bottom: 30px;
-}
-
-.hero .btn-hero {
-    background-color: #e3b23c;
-    color: #264653;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
+    font-weight: 400;
+    color: #555;
+    margin: 20px 0 30px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards 0.4s;
+  }
+  
+  /* دکمه Call-to-Action */
+  .hero .btn-hero {
+    padding: 15px 35px;
+    border-radius: 8px;
     font-weight: bold;
-}
-
+    background: linear-gradient(90deg, #f3c26b, #e3b23c);
+    color: #264653;
+    box-shadow: 0 5px 15px rgba(227,178,60,0.2);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .hero .btn-hero:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #ffd85c, #f3c26b);
+    box-shadow: 0 10px 25px rgba(227,178,60,0.4);
+  }
+  
+  /* لینک‌های اجتماعی */
+  .hero .socials {
+    margin-top: 40px;
+  }
+  .hero .socials a {
+    margin: 0 10px;
+    color: #e3b23c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  .hero .socials a:hover {
+    text-shadow: 0 0 10px #e3b23c;
+  }
+  
+  /* انیمیشن متن */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* انیمیشن gradient متن */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+ 
 /* ===== 🟢 بخش کتاب‌های ویژه (اسلایدر) ===== */
 .featured-books {
     padding: 50px;
@@ -147,54 +287,94 @@ header .cta a:hover {
 }
 
 /* خود کارت کتاب */
-.book-card {
+.book-cards {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;      /* فعال کردن اسکرول افقی */
+    flex-wrap: nowrap;     /* کارت‌ها در یک ردیف باقی بمونن */
+    padding: 20px 0;
+    scroll-behavior: smooth;
+  }
+  
+  .book-card {
+    flex: 0 0 230px;       /* عرض ثابت کارت */
     background: #fafafa;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     padding: 20px;
     text-align: center;
-    min-width: 250px; /* عرض ثابت برای کارت */
-    transition: transform 0.3s ease;
-}
-
-.book-card:hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .book-card:hover {
     transform: translateY(-10px);
-}
-
-.book-card img {
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+  }
+  .book-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 15px;
-}
+    transition: transform 0.3s ease;
+  }
+  
+  .book-card:hover img {
+    transform: scale(1.05); /* zoom تصویر */
+  }
+  
+  /* متن کارت */
+  .book-card h3 {
 
-.book-card h3 {
-    margin: 10px 0;
     font-size: 20px;
+    font-weight: 700;
     color: #264653;
-}
-
-.book-card p {
+    margin: 10px 0 5px 0;
+    line-height: 1.3;
+  }
+  
+  .book-card p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
     color: #555;
     margin-bottom: 15px;
-}
-
-.book-card a {
+  }
+  .book-card-content{
+    padding: 10px;
+  }
+  
+  /* دکمه حرفه‌ای */
+  .book-card a {
     display: inline-block;
-    background-color: #e3b23c;
-    color: #264653;
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
     font-weight: bold;
-}
-
-.book-card a:hover {
-    opacity: 0.8;
-}
-
+    text-decoration: none;
+    color: #264653;
+    background: linear-gradient(90deg, #f3c26b, #e3b23c, #ffd85c);
+    background-size: 200% 200%;
+    transition: all 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .book-card a:hover {
+    animation: gradientShift 2s ease infinite;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(227,178,60,0.4);
+  }
+  
+  /* keyframes برای حرکت گرادینت */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 /* ===== 🟢 بخش مقالات ===== */
 .latest-articles {
     padding: 50px;
