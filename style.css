@@ -227,51 +227,37 @@ header nav ul li a:hover {
     100% { background-position: 0% 50%; }
   }
   
- 
-/* ===== 🟢 بخش کتاب‌های ویژه (اسلایدر) ===== */
-.featured-books {
-    padding: 50px;
-    background-color: #f1f0e8;
-    text-align: center;
-}
-
-.featured-books h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: #264653;
-}
-
-/* محفظه اصلی اسلایدر */
-.slider-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-/* دکمه‌های فلش */
-.slider-btn {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    font-size: 28px;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    z-index: 2;
-}
-
-.slider-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.slider-btn.prev {
-    margin-right: 10px;
-}
-
-.slider-btn.next {
-    margin-left: 10px;
-}
+/*بخش وسط*/
+  .content-placeholder {
+    padding: 100px 20px; 
+    text-align: center;  
+    background: #f9f9f9; 
+    color: #555;         
+    border: 2px dashed #ccc; 
+    border-radius: 12px; 
+    margin: 50px auto;   
+    max-width: 800px;    
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05); /* سایه ملایم */
+    transition: all 0.3s ease; /* انیمیشن نرم برای هاور */
+  }
+  
+  .content-placeholder:hover {
+    background: #fffefb; /* تغییر رنگ ملایم هنگام هاور */
+    transform: translateY(-5px); /* حرکت کمی به بالا */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1); /* سایه قوی‌تر هنگام هاور */
+  }
+  
+  .content-placeholder h2 {
+    font-size: 26px;     
+    margin-bottom: 15px; 
+    color: #264653;      
+    transition: all 0.3s ease;
+  }
+  
+  .content-placeholder:hover h2 {
+    color: #e3b23c; /* تغییر رنگ عنوان هنگام هاور */
+    text-shadow: 0 2px 6px rgba(0,0,0,0.2); /* سایه برای عنوان */
+  }
 
 /* ===== 🟢 فوتر ===== */
 footer {
@@ -310,3 +296,298 @@ footer .socials a:hover {
     background: #e9e9e9;    /* رنگ پشت نوار */
     border-radius: 3px;
   }
+
+/* ============
+
+
+/* ====== 🟢 بخش کتاب‌ها (محبوب‌ترین، تازه‌ترین، پرفروش‌ترین) ====== */
+.books-section {
+  padding: 50px 20px;
+  background-color: #fff;
+  margin: 20px 0;
+  border-radius: 10px;
+  text-align: left; /* چپ چین */
+}
+
+/* عنوان بخش و دکمه مشاهده بیشتر */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-direction: row-reverse;
+}
+
+.section-header h2 {
+  font-size: 28px;
+}
+
+.btn-see-more {
+  background: linear-gradient(90deg, #f3c26b, #e3b23c);
+  color: #264653;
+  padding: 8px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-see-more:hover {
+  background: linear-gradient(90deg, #ffd85c, #f3c26b);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(227,178,60,0.3);
+}
+
+/* اسلایدر کارت‌ها */
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.book-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* کارت کتاب */
+.book {
+  flex: 0 0 auto;
+  background: #f9f9f9;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.book h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.book p {
+  font-size: 14px;
+  color: #555;
+}
+.book:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ====== 🟢 دکمه‌های اسلایدر ====== */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.slider-btn:hover {
+  background-color: rgba(0,0,0,0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-btn.prev {
+  left: 10px; /* چپ */
+}
+
+.slider-btn.next {
+  right: 10px; /* راست */
+}
+
+/* ====== 🟢 فوتر ====== */
+footer {
+  background-color: #264653;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+
+.books-vertical {
+  background: linear-gradient(180deg,#fafafa,#f1f0e8); /* رنگ پس‌زمینه بخش */
+  padding: 30px;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.books-vertical .section-header {
+  display: flex;
+  justify-content: space-between; /* عنوان سمت راست، دکمه سمت چپ */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.books-vertical .section-header h2 {
+  font-size: 20px;
+  color: #333;
+}
+
+.books-vertical .btn-see-more {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.book-vertical {
+  display: flex;
+  flex-direction: row;   /* اول عکس بعد متن */
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  direction: rtl; /* فارسی راست‌چین */
+  transition: transform 0.3s;
+}
+.book-vertical:hover {
+  transform: translateY(-5px);
+}
+
+.book-vertical img {
+  width: 100px;
+  height: 140px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-left: 20px; /* فاصله بین عکس و متن */
+}
+
+.book-info {
+  flex: 1;
+  text-align: right;
+}
+
+.book-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #264653;
+}
+
+.book-info .author {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.rating {
+  font-size: 14px;
+  color: #e3b23c;
+  margin: 5px 0;
+}
+
+
+
+.book-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.book-actions button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.btn-detail {
+  background: #e3b23c;
+  color: #fff;
+}
+.btn-detail:hover {
+  background: #c9972a;
+}
+
+/* ================= 📱 ریسپانسیو صفحه کتاب‌ها ================= */
+
+/* 📌 تبلت (عرض کمتر از 992px) */
+@media (max-width: 992px) {
+  .books-page {
+    padding: 80px 20px;
+  }
+
+  .books-page h1 {
+    font-size: 28px;
+    text-align: center; /* عنوان وسط‌چین بشه */
+  }
+
+  .books-vertical {
+    gap: 15px; /* فاصله کارت‌ها کمتر بشه */
+  }
+
+  .book-vertical {
+    flex-direction: column; /* کارت‌ها عمودی بشن */
+    text-align: center;
+  }
+
+  .book-vertical img {
+    margin: 0 0 15px 0; /* عکس بره بالا */
+    width: 140px;
+    height: 180px;
+  }
+
+  .book-info {
+    text-align: center;
+  }
+}
+
+/* 📌 موبایل (عرض کمتر از 576px) */
+@media (max-width: 576px) {
+  .books-page {
+    padding: 60px 15px;
+  }
+
+  .books-page h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .book-vertical img {
+    width: 110px;
+    height: 150px;
+  }
+
+  .book-info h3 {
+    font-size: 16px;
+  }
+
+  .book-info p {
+    font-size: 12px;
+  }
+
+  .book-info a {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}

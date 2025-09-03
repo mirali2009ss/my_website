@@ -1,0 +1,57 @@
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Vazir', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f0e8;
+    color: #264653;
+}
+
+/* هدر مثل صفحه اصلی */
+header { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background-color: #264653; color: #f1f0e8; }
+.logo-final { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.icon-book { display: flex; gap: 2px; width: 28px; height: 24px; }
+.book-left, .book-right { flex: 1; border-radius: 2px; background: linear-gradient(145deg, #f3c26b, #e3b23c); }
+.book-left { transform: rotate(-12deg); }
+.book-right { transform: rotate(12deg); }
+.logo-text { font-size: 28px; font-weight: bold; background: linear-gradient(90deg, #f3c26b, #ffd85c, #e3b23c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+nav ul { list-style: none; display: flex; gap: 25px; justify-content: flex-end; }
+nav ul li a { color: #f1f0e8; text-decoration: none; font-weight: 500; position: relative; padding-bottom: 4px; }
+nav ul li a::after { content: ""; position: absolute; height: 2px; bottom: -4px; right: 0; width: 0; background-color: #e3b23c; transition: width 0.3s ease; }
+nav ul li a:hover::after { width: 100%; left: auto; right: 0; }
+.cta a { background-color: #e3b23c; color: #264653; padding: 10px 20px; border-radius: 5px; font-weight: bold; text-decoration: none; }
+
+/* دسته‌بندی‌ها */
+.categories { padding: 100px 20px 50px 20px; }
+.categories h2 { font-size: 32px; margin-bottom: 20px; text-align: right; }
+.category-list { display: flex; gap: 15px; flex-wrap: wrap; justify-content: flex-end; }
+.category { padding: 10px 20px; background-color: #ffd85c; color: #264653; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease; }
+.category:hover { transform: scale(1.05); }
+
+/* کارت‌ها */
+.books-section { padding: 50px 20px; background-color: #fff; margin: 20px 0; border-radius: 10px; text-align: right; }
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.section-header h2 { font-size: 28px; }
+.btn-see-more { background: linear-gradient(90deg, #f3c26b, #e3b23c); color: #264653; padding: 8px 18px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; }
+.btn-see-more:hover { background: linear-gradient(90deg, #ffd85c, #f3c26b); transform: scale(1.05); box-shadow: 0 6px 15px rgba(227,178,60,0.3); }
+
+.slider-wrapper { position: relative; display: flex; align-items: center; }
+.book-list { display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 20px; padding: 10px 0; }
+.book-list::-webkit-scrollbar { display: none; }
+.book { background: #f9f9f9; border-radius: 10px; width: 200px; text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+.book img { width: 100%; border-radius: 5px; margin-bottom: 10px; }
+.book h3 { font-size: 18px; margin-bottom: 5px; }
+.book p { font-size: 14px; color: #555; }
+.book:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+/* دکمه‌های اسلایدر */
+.slider-btn { background-color: rgba(0,0,0,0.5); color: white; border: none; font-size: 28px; padding: 10px; border-radius: 50%; cursor: pointer; z-index: 2; transition: background 0.3s; }
+.slider-btn:hover { background-color: rgba(0,0,0,0.8); }
+
+/* فوتر */
+footer { background-color: #264653; color: white; text-align: center; padding: 20px; margin-top: 50px; }
+
+/* ریسپانسیو */
+@media (max-width: 768px) { .book-list { justify-content: center; } .book { width: 45%; } }
+@media (max-width: 480px) { .book { width: 100%; } }

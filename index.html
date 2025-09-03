@@ -21,11 +21,10 @@
           </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="#">خانه</a></li>
-                <li><a href="#">کتاب‌ها</a></li>
-                <li><a href="#">مقالات</a></li>
+                <li><a href="#">دسته بندی</a></li>
+                <li><a href="books.html">کتابخانه</a></li>
                 <li><a href="#">درباره ما</a></li>
-                <li><a href="#">دسته بندی ها</a></li>
+                
             </ul>
         </nav>
         <div class="cta">
@@ -57,8 +56,15 @@
           <span></span>
         </div>
       </section>
-<div>صفحه اصلی که بعدا پر میشه
-</div>
+
+
+<section class="content-placeholder">
+    <h2>این بخش بعدا تکمیل میشود</h2>
+    <p>اینجا بخش های جذاب کتاب اضافه میشه</p>
+
+</section>
+
+
     <!-- فوتر -->
     <footer>
         <div class="footer-content">
@@ -70,22 +76,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        const slider = document.querySelector('.book-slider'); // پیدا کردن بخش کارت‌ها
-        const prevBtn = document.querySelector('.slider-btn.prev'); // دکمه چپ
-        const nextBtn = document.querySelector('.slider-btn.next'); // دکمه راست
-        
-        const scrollAmount = 900; // اندازه حرکت (عرض هر کارت + فاصله بینشون)
-        
-        nextBtn.addEventListener('click', () => {
-            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' }); 
-            // وقتی روی دکمه راست کلیک بشه، کارت‌ها به سمت راست حرکت می‌کنن
-        });
-        
-        prevBtn.addEventListener('click', () => {
-            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            // وقتی روی دکمه چپ کلیک بشه، کارت‌ها به سمت چپ حرکت می‌کنن
-        });
-        </script>
+
 </body>
 </html>
